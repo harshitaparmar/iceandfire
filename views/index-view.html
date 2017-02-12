@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                <select ng-model="selectFilter" ng-change="mergeAPI.changeValue(selectFilter)" >
+                    Select Your Filter<option>ALL name</option>
+                    <option>House Region and Character Culture</option>
+                </select>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                <button type="button" class="btn-x1" ng-click="mergeAPI.ShowHide()">Select Filter</button>
+            </div>
+        </div>
+        </div>
+        <div ng-show="mergeAPI.IsVisible">
+        <div ng-repeat="value in mergeAPI.values | filter : toArray | orderBy:'name'">
+                <div class="row">
+                    <div ng-if="mergeAPI.modelValue=='ALL name'">
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" ng-if="value.name">
+                            {{value.name}}
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div ng-if="mergeAPI.modelValue=='House Region and Character Culture'">
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6" ng-if= "value.region">
+                            House region : {{value.region}}
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6" ng-if="value.culture">
+                            Character Culture : {{value.culture}}
+                    </div>
+                    </div>
+                </div>
+               <!-- <div class="row" ng-if="book.name && book.publisher && book.numberOfPages">
+                    	<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                    		Name: {{book.name}}
+                    	</div>
+                    	<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                    Authors :  
+                                <div ng-repeat="auth in book.authors" ng-if="auth">
+                                       <ul style="list-style-type:none;display:inline">
+                                           <li style="display:inline"> {{auth}}</li>
+                                                </ul>                           
+                                </div>
+                    	</div>
+                 <div class="row">
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                            Publisher: {{book.publisher}}
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                            No Of Pages : {{book.numberOfPages}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-if="book.region">
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                            House Name:{{house.name}}
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                            Region: {{house.region}}
+                        </div>
+                </div>
+                <div class="row" ng-if="book.culture">
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                          Character Name: {{character.name}}
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                            Culture: {{character.culture}}
+                        </div>
+                </div>-->
+        </div>
+        </div> 
+    </div>            
+</div>
